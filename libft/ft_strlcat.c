@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:56:58 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/15 15:37:53 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/03/17 01:04:07 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 			i++;
 		while (i < dstsize - 1 && src[j] != '\0')
 		{
-			dst[i] = src[i];
+			dst[i] = src[j];
 			j++;
 			i++;
 		}
