@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jeyoung <jeyoung@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 17:04:01 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/15 15:31:39 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/03/16 19:37:01 by jeyoung          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ char	*ft_strrchr(const char *s, int c)
 
 	ptr = (char *)s;
 	return_ptr = 0x00;
-	if (c == 0x00)
-		return (return_ptr);
 	while (*ptr != '\0')
 	{
 		if (*ptr == c)
 			return_ptr = ptr;
 		ptr++;
 	}
+	if (c == '\0' && *ptr == '\0')
+		return_ptr = ptr;
 	return (return_ptr);
 }
