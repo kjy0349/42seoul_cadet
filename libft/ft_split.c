@@ -6,13 +6,13 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:33:46 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/29 17:18:55 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:12:15 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_spcount(char const *s, char c)
+static int	get_spcount(char const *s, char c)
 {
 	int	sp_count;
 
@@ -28,7 +28,7 @@ int	get_spcount(char const *s, char c)
 	return (sp_count);
 }
 
-int	get_str_length(char const *s, char c)
+static int	get_str_length(char const *s, char c)
 {
 	int			i;
 	int			length;
@@ -43,7 +43,7 @@ int	get_str_length(char const *s, char c)
 	return (length);
 }
 
-char const	*make_str(char **ptr, char const *s, int length)
+static char const	*make_str(char **ptr, char const *s, int length)
 {
 	int	j;
 

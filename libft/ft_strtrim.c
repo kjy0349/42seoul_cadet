@@ -6,14 +6,14 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:40:22 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/29 17:47:53 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:13:09 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdbool.h>
 
-bool	check_set(char const c1, char const *set)
+static bool	check_set(char const c1, char const *set)
 {
 	bool	check;
 
@@ -30,7 +30,7 @@ bool	check_set(char const c1, char const *set)
 	return (check);
 }
 
-void	get_length(char const *s1, char const *set,	int *i, int *j)
+static void	get_length(char const *s1, char const *set,	int *i, int *j)
 {
 	bool	ch_prefix;
 	bool	ch_suffix;

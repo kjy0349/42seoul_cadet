@@ -6,13 +6,13 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:50:13 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/29 18:00:54 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/02 13:11:05 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_num_length(long n, int *sign)
+static int	get_num_length(long n, int *sign)
 {
 	int		length;
 
