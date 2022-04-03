@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:50:27 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/29 18:54:01 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/02 14:39:26 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	static int	size;
+	int	size;
 
+	size = 0;
 	if (!lst)
 		return (0);
 	while (lst)

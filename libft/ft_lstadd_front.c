@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:48:57 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/29 18:50:14 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/02 14:39:00 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	new->next = *lst;
 	*lst = new;
 }
