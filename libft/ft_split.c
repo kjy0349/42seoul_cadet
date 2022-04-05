@@ -6,12 +6,11 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:33:46 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/05 17:21:26 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/05 17:50:58 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	get_spcount(char const *s, char c)
 {
@@ -63,16 +62,17 @@ char	**ft_split(char const *s, char c)
 {
 	char			**ptr;
 	int				length;
-	int				spcount;
 	char			**return_ptr;
 
+	if (!s)
+		return (NULL);
 	while (*s == c && *s != '\0')
 		s++;
-	spcount = get_spcount(s, c);
-	ptr = (char **)malloc(sizeof(char *) * (spcount + 1));
+	ptr = (char **)malloc(sizeof(char *) * (get_spcount(s, c) + 1));
 	if (!ptr)
 		return (NULL);
 	return_ptr = ptr;
+	return_ptr[get_spcount(s, c)] = 0;
 	while (*s)
 	{
 		length = get_str_length(s, c);
@@ -84,6 +84,5 @@ char	**ft_split(char const *s, char c)
 			s++;
 		ptr++;
 	}
-	return_ptr[spcount] = 0;
 	return (return_ptr);
 }
