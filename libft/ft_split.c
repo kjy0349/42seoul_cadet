@@ -6,11 +6,12 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:33:46 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/02 13:12:15 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/05 17:21:26 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	get_spcount(char const *s, char c)
 {
@@ -19,10 +20,10 @@ static int	get_spcount(char const *s, char c)
 	sp_count = 0;
 	while (*s != '\0')
 	{
-		while (*s != c)
+		while (*s != c && *s != '\0')
 			s++;
 		sp_count++;
-		while (*s == c)
+		while (*s == c && *s != '\0')
 			s++;
 	}
 	return (sp_count);
@@ -61,17 +62,16 @@ static char const	*make_str(char **ptr, char const *s, int length)
 char	**ft_split(char const *s, char c)
 {
 	char			**ptr;
-	char			**return_ptr;
 	int				length;
+	int				spcount;
+	char			**return_ptr;
 
-	if (!s)
-		return (NULL);
 	while (*s == c && *s != '\0')
 		s++;
-	ptr = (char **)malloc(sizeof(char *) * (get_spcount(s, c) + 1));
+	spcount = get_spcount(s, c);
+	ptr = (char **)malloc(sizeof(char *) * (spcount + 1));
 	if (!ptr)
 		return (NULL);
-	ptr[get_spcount(s, c)] = NULL;
 	return_ptr = ptr;
 	while (*s)
 	{
@@ -80,9 +80,10 @@ char	**ft_split(char const *s, char c)
 		if (!ptr)
 			return (NULL);
 		s = make_str(ptr, s, length);
-		while (*s == c)
+		while (*s == c && *s != '\0')
 			s++;
 		ptr++;
 	}
+	return_ptr[spcount] = 0;
 	return (return_ptr);
 }

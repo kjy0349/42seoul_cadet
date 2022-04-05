@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:57:34 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/17 01:04:22 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/05 14:38:06 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	return_ptr = 0x00;
 	while (*ptr != '\0')
 	{
-		if (*ptr == c)
+		if (*ptr == (char)c)
 		{
 			return_ptr = ptr;
 			break ;

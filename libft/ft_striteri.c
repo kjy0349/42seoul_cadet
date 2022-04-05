@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:11:13 by jeykim            #+#    #+#             */
-/*   Updated: 2022/03/29 18:16:39 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/05 17:30:13 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	static int	i;
+	int	i;
 
+	i = 0;
 	if (!s)
 		return ;
 	while (*s)

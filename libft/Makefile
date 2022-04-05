@@ -7,14 +7,20 @@ OBJECT_BONUS = ${SRC_BONUS:.c=.o}
 INCS	= .
 TARGET	= libft.a
 
+ifdef EXIST_BONUS
+	OBJ = $(OBJECT) $(OBJECT_BONUS)
+else
+	OBJ = $(OBJECT)
+endif
+
 .c.o :
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCS}
 
-${TARGET} : ${OBJECT}
-	ar rc ${TARGET} ${OBJECT}
-	ranlib ${TARGET}
-
 all : ${TARGET}
+
+${TARGET} : ${OBJ}
+	ar rc ${TARGET} ${OBJ}
+	ranlib ${TARGET}
 
 clean :
 	rm -f ${OBJECT} ${OBJECT_BONUS}
@@ -24,8 +30,7 @@ fclean : clean
 
 re : fclean all
 
-bonus : ${OBJS} ${OBJECT_BONUS}
-		ar rc ${TARGET}
-		ranlib ${TARGET}
+bonus :
+	make EXIST_BONUS=1 all
 
 .PHONY : all clean fclean re .c.o

@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:40:22 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/02 13:13:09 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/05 14:39:40 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	get_length(char const *s1, char const *set,	int *i, int *j)
 
 	*i = 0;
 	*j = ft_strlen(s1) - 1;
-	while (true && *i < *j)
+	while (*i < *j)
 	{
 		ch_prefix = check_set(s1[*i], set);
 		ch_suffix = check_set(s1[*j], set);
