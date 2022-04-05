@@ -10,18 +10,18 @@ OBJECT_BONUS = ${SRC_BONUS:.c=.o}
 INCS	= .
 
 ifdef EXIST_BONUS
-	OBJ = $(OBJECT) $(OBJECT_BONUS)
+	OBJ = ${OBJECT} ${OBJECT_BONUS}
 else
-	OBJ = $(OBJECT)
+	OBJ = ${OBJECT}
 endif
 
 .c.o :
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCS}
 
-all : ${NAME}
-
-${NAME} : ${OBJ}
+${NAME} : ${OBJECT}
 	ar rc $@ $^
+
+all : ${NAME}
 
 clean :
 	rm -f ${OBJECT} ${OBJECT_BONUS}
