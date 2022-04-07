@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:33:46 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/05 17:50:58 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/07 17:37:27 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,22 @@ static char const	*make_str(char **ptr, char const *s, int length)
 	return (s);
 }
 
+static void	*free_all(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+	{
+		free(ptr[i]);
+		ptr[i] = NULL;
+		i++;
+	}
+	free(ptr);
+	ptr = NULL;
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**ptr;
@@ -78,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		length = get_str_length(s, c);
 		*ptr = (char *)malloc(sizeof(char) * length + 1);
 		if (!ptr)
-			return (NULL);
+			return (free_all(return_ptr));
 		s = make_str(ptr, s, length);
 		while (*s == c && *s != '\0')
 			s++;

@@ -18,7 +18,7 @@ endif
 .c.o :
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCS}
 
-${NAME} : ${OBJECT}
+${NAME} : ${OBJ}
 	ar rc $@ $^
 
 all : ${NAME}

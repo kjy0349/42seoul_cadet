@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:09:14 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/05 21:28:29 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/07 17:38:32 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*s;
-	char	*d;
-	size_t	i;
+	const void	*s;
+	void		*d;
+	size_t		i;
 
-	s = (char *)src;
-	d = (char *)dst;
+	s = src;
+	d = dst;
 	i = 0;
 	if (!dst && !src)
 		return (NULL);
