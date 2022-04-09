@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:40:22 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/09 14:45:11 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/09 15:07:13 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	ptr[ptr_index] = '\0';
 	return (ptr);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (*s != '\0')
-	{
-		i++;
-		s++;
-	}
-	return (i);
 }
