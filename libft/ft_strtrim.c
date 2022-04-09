@@ -6,13 +6,12 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 13:40:22 by jeykim            #+#    #+#             */
-/*   Updated: 2022/04/09 14:43:21 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/04/09 14:45:11 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdbool.h>
-#include <stdio.h>
 
 static bool	check_set(char const c1, char const *set)
 {
